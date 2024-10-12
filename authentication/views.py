@@ -194,7 +194,7 @@ class LockScreenView(LoginView,View):
                 username = self.username[0]
 
                 p_len =len(username)
-                if(p_len<6):
+                if(p_len<4):
                     user = auth.authenticate(username=username, password=password)
                     if user is not None:    
                         request.session['username'] = username
@@ -208,7 +208,7 @@ class LockScreenView(LoginView,View):
                         return JsonResponse(data,safe=False)
                 else:
                     data={}
-                    data['error_message'] = 'Password must be at least 6 characters'
+                    data['error_message'] = 'Password must be at least 4 characters'
                     return JsonResponse(data,safe=False)
             else:
                 data={}

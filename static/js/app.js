@@ -361,10 +361,10 @@ $("#user-register").on("click", function (e) {
   var confirm_password = document.getElementById("confirm_password").value;
 
   if (email && username && password && confirm_password != "") {
-    if (password.length < 6 || confirm_password < 6) {
+    if (password.length < 4 || confirm_password < 4) {
       $("#err-msg").removeAttr("hidden");
       $("#err-msg").addClass("alert alert-danger");
-      $("#msg_err").text("Password must be at least 6 characters");
+      $("#msg_err").text("Password must be at least 4 characters");
     } else {
       if (password == confirm_password) {
         var formData = new FormData();
@@ -426,10 +426,10 @@ $("#user-login").on("click", function (e) {
   var username = document.getElementById("user_name").value;
   var password = document.getElementById("user_password").value;
   if (username && password != "") {
-    if (password.length < 6) {
+    if (password.length < 4) {
       $("#err-msg").removeAttr("hidden");
       $("#err-msg").addClass("alert alert-danger");
-      $("#msg_err").text("Password must be at least 6 characters");
+      $("#msg_err").text("Password must be at least 4 characters");
     } else {
       var formData = new FormData();
       formData.append("username", username);
@@ -483,10 +483,10 @@ $("#lock-screen-login").on("click", function (e) {
   var password = document.getElementById("user_password").value;
 
   if (password != "") {
-    if (password.length < 6) {
+    if (password.length < 4) {
       $("#err-msg").removeAttr("hidden");
       $("#err-msg").addClass("alert alert-danger");
-      $("#msg_err").text("Password must be at least 6 characters");
+      $("#msg_err").text("Password must be at least 4 characters");
     } else {
       var formData = new FormData();
       formData.append("password", password);
